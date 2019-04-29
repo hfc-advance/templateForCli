@@ -18,7 +18,9 @@
     "dist",
     "README.md"
   ],
-  "keywords": ["{{projectName}}"],
+  "keywords": [
+    "{{projectName}}"
+  ],
   "author": "{{gitAuthor}}",
   "license": "ISC",
   "devDependencies": {
