@@ -5,13 +5,9 @@ import commonjs from 'rollup-plugin-commonjs'
 import { eslint } from 'rollup-plugin-eslint'
 import eslintFormate from 'eslint-friendly-formatter'
 import css from 'rollup-plugin-css-only'
-import sass from 'rollup-plugin-sass'
 import { version, dependencies } from '../package.json'
-import vue from 'rollup-plugin-vue'
-const vueConfig = require('../.vuerc.js')
 
 export default {
-  input: process.env.BUILD_TYPE === 'vue' ? 'src/index.vue' : 'src/index.js',
   plugins: [
     eslint({
       include: ['src/**/*.js', 'src/**/*.vue'],
@@ -25,9 +21,7 @@ export default {
         "runtimeHelpers": true
       }
     ),
-    vue(vueConfig),
     css(),
-    sass(),
     replace({
       VERSION: JSON.stringify(version),
     }),
